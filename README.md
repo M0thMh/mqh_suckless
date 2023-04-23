@@ -4,5 +4,5 @@
 # How To Install 
 
 run in your shell
->  chmod 755 install.sh
+>  chmod 755 install.sh  
 > sudo ./install 
