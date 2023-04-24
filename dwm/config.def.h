@@ -1,5 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
+#include <X11/XF86keysym.h>
+
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -22,11 +24,17 @@ static const char *colors[][3]      = {
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 
-
+/* Browser */
 static const char *browser[]  = { "/usr/bin/firefox", NULL };
+/* Lock Screen */
 static const char *lock[]     = { "/usr/local/bin/slock",   NULL };
-
-
+/* Audio */
+static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
+static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
+static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
+/* Brightness */
+static const char *light_up[] = {"/usr/bin/light", "-A", "5", NULL};
+static const char *light_down[] = {"/usr/bin/light", "-U", "5", NULL};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -67,9 +75,22 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
+/* Shortcut */
+char XK_ALOW 	= "XF86XK_AudioLowerVolume";
+char XK_AUP 	= "XF86XK_AudioMute";
+char XK_AMUTE 	= "XF86XK_AudioRaiseVolume";
+char XK_BUP 	= "XF86XK_MonBrightnessUp";
+char XK_BDOWN 	= "XF86XK_MonBrightnessDown";
+
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	
+
+	{ 0,                       	XK_ALOW,   spawn, 	   {.v = downvol } }
+	{ 0,                      	XK_AMUTE,  spawn, 	   {.v = mutevol } }
+	{ 0,                       	XK_AUP,    spawn, 	   {.v = upvol   } }
+	{ 0,				XK_BUP,	   spawn,	   {.v = light_up} },
+	{ 0,				XK_BDOWN,  spawn,	   {.v = light_down} },
+
 	{ MODKEY,			XK_w,	   spawn,	   {.v = browser } },
 	{ MODKEY, 			XK_x,	   spawn,	   {.v = lock } },
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
