@@ -71,13 +71,14 @@ static const struct arg args[] = {
 
 
 
-	{ wifi_essid,		widi,		   "wlp2s0"    },
-	{ keymap,		"%s",	   	   NULL        },
-	{ ram_perc,		"%s", 	   	   NULL        },
-	{ cpu_perc,		"%s",	   	   NULL	       },
-	{ battery_state,	"%s",	           "BAT0"      },
-	{ battery_perc,		"%s",         	   "BAT0"      },
-	{ datetime, 		"%s | ",           "%F %T"     },
+	{ wifi_essid,		widi,		"wlp2s0"    			       },
+	{ keymap,		"%s",	   	NULL        			       },
+	{ run_command,		"%s",		"/home/mqh/.config/src/scripts/audio"  },
+	{ ram_perc,		"%s", 	   	NULL        			       },
+	{ cpu_perc,		"%s",	   	NULL	           		       },
+	{ battery_state,	"%s",	        "BAT0"      		 	       },
+	{ battery_perc,		"%s",         	"BAT0"      			       },
+	{ datetime, 		"%s | ",        "%F %T"      		   	       },
 
 
 
