@@ -75,7 +75,7 @@ keymap(const char *unused)
 		warn("XGetAtomName: Failed to get atom name");
 		goto end;
 	}
-	layout = bprintf("LANG: %s | ", get_layout(symbols, state.group));
+	layout = bprintf("%s", get_layout(symbols, state.group));
 	XFree(symbols);
 end:
 	XkbFreeKeyboard(desc, XkbSymbolsNameMask, 1);

@@ -64,21 +64,20 @@ static const char unknown_str[] = "n/a";
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  */
 
-const char widi[] = {"WIFI: %s | "};
 static const struct arg args[] = {
 	/* function format          argument */
 	
 
 
 
-	{ wifi_essid,		widi,		"wlp2s0"    			       },
-	{ keymap,		"%s",	   	NULL        			       },
-	{ run_command,		"%s",		"/home/mqh/.config/src/scripts/audio"  },
-	{ ram_perc,		"%s", 	   	NULL        			       },
-	{ cpu_perc,		"%s",	   	NULL	           		       },
-	{ battery_state,	"%s",	        "BAT0"      		 	       },
-	{ battery_perc,		"%s",         	"BAT0"      			       },
-	{ datetime, 		"%s | ",        "%F %T"      		   	       },
+	{ wifi_essid,		" WIFI :  %s   |  ",		"wlp2s0"    			       },
+	{ keymap,		"  KEY :  %s   |  ",	   	NULL        			       },
+	{ run_command,		"  VOL :  %s   |  ",		"/home/mqh/.config/src/scripts/audio"  },
+	{ ram_perc,		"  RAM :  %s   |  ", 	   	NULL        			       },
+	{ cpu_perc,		"  CPU :  %s   |  ",	   	NULL	           		       },
+	{ battery_state,	"  %s ",	        	"BAT0"      		 	       },
+	{ battery_perc,		" %s   |  ",         		"BAT0"      			       },
+	{ datetime, 		"  %s   |  ", 	                "%a  %d %b %y  %H:%M"  	 	       },
 
 
 

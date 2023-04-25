@@ -8,14 +8,14 @@ getVolume () {
 	
 	if [ $ISMUTE = "false" ]
 	then
-		echo "VOL: $VOLUME% | ";
+		echo "$VOLUME%";
 	
 	elif [ $ISMUTE = "true" ]
 	then
-		echo "VOL: MUTE | ";
+		echo "MUTE";
 	
 	else
-		echo "VOL: ERROR | ";
+		echo "ERROR";
 
 	fi
 }

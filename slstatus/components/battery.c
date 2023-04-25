@@ -46,7 +46,7 @@
 		if (pscanf(path, "%d", &cap_perc) != 1)
 			return NULL;
 
-		return bprintf("%d%% | ", cap_perc);
+		return bprintf("%d%%", cap_perc);
 	}
 
 	const char *
@@ -56,9 +56,9 @@
 			char *state;
 			char *symbol;
 		} map[] = {
-			{ "Charging",    "CHR: " },
-			{ "Discharging", "BAT: " },
-			{ "Full",        "FULL " },
+			{ "Charging",    "CHR : " },
+			{ "Discharging", "BAT : " },
+			{ "Full",        "FULL  " },
 			{ "Not charging", "? " },
 		};
 		size_t i;
