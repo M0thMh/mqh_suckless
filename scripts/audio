@@ -15,7 +15,7 @@ getVolume () {
 		echo "VOL: MUTE | ";
 	
 	else
-		echo "ERROR";
+		echo "VOL: ERROR | ";
 
 	fi
 }
