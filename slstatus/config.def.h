@@ -70,14 +70,15 @@ static const struct arg args[] = {
 
 
 
-	{ wifi_essid,		" WIFI :  %s   |  ",		"wlp2s0"    			       },
-	{ keymap,		"  KEY :  %s   |  ",	   	NULL        			       },
-	{ run_command,		"  VOL :  %s   |  ",		"/home/mqh/.config/src/scripts/audio"  },
-	{ ram_perc,		"  RAM :  %s   |  ", 	   	NULL        			       },
-	{ cpu_perc,		"  CPU :  %s   |  ",	   	NULL	           		       },
-	{ battery_state,	"  %s ",	        	"BAT0"      		 	       },
-	{ battery_perc,		" %s   |  ",         		"BAT0"      			       },
-	{ datetime, 		"  %s   |  ", 	                "%a  %d %b %y  %H:%M"  	 	       },
+	{ wifi_essid,		" WIFI :  %s   |  ",		"wlp2s0"    			       		},
+	{ run_command,		"  BRI :  %s   |  ",		"/home/mqh/.config/src/scripts/slstatus/bri"    },
+	{ keymap,		"  KEY :  %s   |  ",	   	NULL        			       		},
+	{ run_command,		"  VOL :  %s   |  ",		"/home/mqh/.config/src/scripts/slstatus/audio"  },
+	{ ram_perc,		"  RAM :  %s   |  ", 	   	NULL        			       		},
+	{ cpu_perc,		"  CPU :  %s   |  ",	   	NULL	           		       		},
+	{ battery_state,	"  %s ",	        	"BAT0"      		 	       		},
+	{ battery_perc,		" %s   |  ",         		"BAT0"      			       		},
+	{ datetime, 		"  %s   |  ", 	                "%a  %d %b %y  %H:%M"  	 	       		},
 
 
 
